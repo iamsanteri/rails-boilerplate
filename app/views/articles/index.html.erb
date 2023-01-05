@@ -1,5 +1,6 @@
 <h1>Hello, Santeri!</h1>
 <h2>Here are your articles:</h2>
+
 <ul>
   <% @articles.each do |article| %>
     <li>
@@ -8,3 +9,5 @@
     </li>
   <% end %>
 </ul>
+
+<%= link_to "New Article", new_article_path %>
