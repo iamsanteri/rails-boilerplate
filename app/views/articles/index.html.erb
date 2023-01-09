@@ -1,12 +1,16 @@
 <h1>Hello, Santeri!</h1>
+
+Our blog has <%= Article.public_count %> articles and counting!
+
 <h2>Here are your articles:</h2>
 
 <ul>
   <% @articles.each do |article| %>
-    <li>
-      <%= link_to article.title, article %>
-      </a>
-    </li>
+    <% unless article.archived? %>
+      <li>
+        <%= link_to article.title, article %>
+      </li>
+    <% end %>
   <% end %>
 </ul>
 
